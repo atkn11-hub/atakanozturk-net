@@ -1,0 +1,13 @@
+[
+  { "id": "yenibosna", "ad": "Yenibosna Merkez", "kimlere": "Basın Ekspres tarafında çalışanlar, yeni bina arayanlar.", "ulasim": "Metrobüs ve M1A metro hattına yakın.", "not": "", "m2Fiyat": "" },
+  { "id": "zafer", "ad": "Zafer", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" },
+  { "id": "kocasinan", "ad": "Kocasinan Merkez", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" },
+  { "id": "soganli", "ad": "Soğanlı", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" },
+  { "id": "cobancesme", "ad": "Çobançeşme", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" },
+  { "id": "sirinevler", "ad": "Şirinevler", "kimlere": "Çarşıya, meydana yakın oturmak isteyenler. Kira getirisi bakanlar için de hareketli bir bölge.", "ulasim": "Metrobüs durağı ve E-5 hemen yanı başında.", "not": "", "m2Fiyat": "" },
+  { "id": "hurriyet", "ad": "Hürriyet", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" },
+  { "id": "fevzicakmak", "ad": "Fevzi Çakmak", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" },
+  { "id": "cumhuriyet", "ad": "Cumhuriyet", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" },
+  { "id": "bahcelievler", "ad": "Bahçelievler", "kimlere": "Bahçeli, alçak katlı eski bina dokusunu sevenler ve aileler.", "ulasim": "Metrobüs Bahçelievler durağı ve E-5 bağlantısı yakın.", "not": "", "m2Fiyat": "" },
+  { "id": "siyavuspasa", "ad": "Siyavuşpaşa", "kimlere": "", "ulasim": "", "not": "", "m2Fiyat": "" }
+]
