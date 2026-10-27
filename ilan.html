@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İlan | Atakan Öztürk</title>
+<meta name="description" content="Bahçelievler'de satılık ve kiralık daire ilanı. Atakan Öztürk, gayrimenkul danışmanı.">
+<meta name="theme-color" content="#1E3E8F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <a href="./" class="plate plate--logo" aria-label="Atakan Öztürk, ana sayfa">
+    <span class="plate__small">Gayrimenkul Danışmanı</span>
+    <span class="plate__big">Atakan Öztürk</span>
+  </a>
+  <nav class="nav" aria-label="Ana menü">
+    <a href="./#portfoy">Portföy</a>
+    <a href="./#mahalleler">Mahalleler</a>
+    <a href="./#hesap">Hesapla</a>
+    <a href="./#iletisim">İletişim</a>
+  </nav>
+  <a class="btn btn--wa top__wa" data-wa href="#">WhatsApp</a>
+</header>
+
+<main class="ilan-page" id="ilan">
+  <p class="small">İlan yükleniyor…</p>
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-label="Fotoğraf galerisi">
+  <img alt="">
+  <button type="button" class="lb-close" aria-label="Kapat">×</button>
+  <button type="button" class="lb-prev" aria-label="Önceki fotoğraf">‹</button>
+  <button type="button" class="lb-next" aria-label="Sonraki fotoğraf">›</button>
+</dialog>
+
+<footer class="foot"><div class="foot__in">
+  <div class="plate plate--sm"><span class="plate__big">Atakan Öztürk</span></div>
+  <p><span data-cfg="bolge"></span><span data-need="yetkiBelgesi">. Taşınmaz Ticareti Yetki Belgesi No: <span data-cfg="yetkiBelgesi"></span></span></p>
+  <p><a href="kvkk.html">KVKK aydınlatma metni</a> <span class="sep">/</span> <a data-ig href="#" target="_blank" rel="noopener"></a></p>
+  <p class="small">© <span id="yil"></span> Atakan Öztürk</p>
+</div></footer>
+
+<a class="wa-bar" data-wa href="#">WhatsApp'tan yaz</a>
+
+<script src="assets/config.js"></script>
+<script src="assets/plan.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

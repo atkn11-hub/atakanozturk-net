@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atakan Öztürk | Bahçelievler Gayrimenkul Danışmanı</title>
+<meta name="description" content="Bahçelievler'de satılık ve kiralık daire arayanlara, evini satmak ya da kiraya vermek isteyenlere danışmanlık. Atakan Öztürk, İstanbul / Bahçelievler.">
+<link rel="canonical" href="https://atakanozturk.net/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Atakan Öztürk | Bahçelievler Gayrimenkul Danışmanı">
+<meta property="og:description" content="Bahçelievler'de satılık ve kiralık evler, mahalle mahalle.">
+<meta property="og:url" content="https://atakanozturk.net/">
+<meta property="og:image" content="https://atakanozturk.net/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1E3E8F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Atakan Öztürk",
+  "url": "https://atakanozturk.net/",
+  "telephone": "+905352784177",
+  "image": "https://atakanozturk.net/img/og.png",
+  "areaServed": { "@type": "Place", "name": "Bahçelievler, İstanbul" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Bahçelievler", "addressRegion": "İstanbul", "addressCountry": "TR" },
+  "sameAs": ["https://www.instagram.com/atakanremax/"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#portfoy">İçeriğe geç</a>
+
+<header class="top">
+  <a href="./" class="plate plate--logo" aria-label="Atakan Öztürk, ana sayfa">
+    <span class="plate__small">Gayrimenkul Danışmanı</span>
+    <span class="plate__big">Atakan Öztürk</span>
+  </a>
+  <nav class="nav" aria-label="Ana menü">
+    <a href="#portfoy">Portföy</a>
+    <a href="#mahalleler">Mahalleler</a>
+    <a href="#surec">Nasıl çalışıyorum</a>
+    <a href="#hesap">Hesapla</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+  <a class="btn btn--wa top__wa" data-wa href="#">WhatsApp</a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__text">
+    <h1 class="hero__title">Bahçelievler'de ev arıyorsanız, önce sokakları konuşalım.</h1>
+    <p class="hero__lead">Satılık ve kiralık konutta, ev arayanlarla ev sahiplerinin arasında duruyorum. Hangi sokak akşam sessizdir, hangi binanın aidatı nereye gider; işin yarısı bunları bilmek.</p>
+    <div class="hero__cta">
+      <a class="btn btn--wa" data-wa href="#">WhatsApp'tan yaz</a>
+      <a class="btn btn--line" href="#portfoy">Evlere bak</a>
+    </div>
+  </div>
+  <figure class="hero__art" aria-hidden="true">
+    <svg id="facade" viewBox="0 0 420 520"></svg>
+  </figure>
+  <dl class="hero__meta">
+    <div><dt>Bölge</dt><dd data-cfg="bolge"></dd></div>
+    <div><dt>Telefon</dt><dd><a data-tel href="#" data-cfg="telefon"></a></dd></div>
+    <div data-need="yetkiBelgesi"><dt>Yetki belgesi no</dt><dd data-cfg="yetkiBelgesi"></dd></div>
+    <div data-need="deneyim"><dt>Deneyim</dt><dd data-cfg="deneyim"></dd></div>
+  </dl>
+</section>
+
+<!-- PORTFÖY -->
+<section id="portfoy" class="sec portfoy">
+  <div class="sec__head">
+    <h2>Elimdeki evler</h2>
+    <div class="filter" role="group" aria-label="İlanları filtrele">
+      <button type="button" data-f="hepsi" aria-pressed="true">Tümü</button>
+      <button type="button" data-f="satilik" aria-pressed="false">Satılık</button>
+      <button type="button" data-f="kiralik" aria-pressed="false">Kiralık</button>
+    </div>
+  </div>
+  <div class="rail-wrap">
+    <div class="rail" id="rail" tabindex="0" aria-label="İlanlar, yana kaydırın"></div>
+    <div class="rail-nav">
+      <button type="button" class="rail-btn" data-dir="-1" aria-label="Önceki ilanlar">‹</button>
+      <button type="button" class="rail-btn" data-dir="1" aria-label="Sonraki ilanlar">›</button>
+    </div>
+  </div>
+  <p class="aside">Aradığınız ev burada yoksa, portföye girmeden önce haber verebilirim. <a data-wa data-wa-msg="Merhaba Atakan Bey, şöyle bir ev arıyorum: " href="#">Ne aradığınızı yazın.</a></p>
+</section>
+
+<!-- MAHALLELER -->
+<section id="mahalleler" class="sec mahalle">
+  <div class="sec__head">
+    <h2>Mahalle mahalle Bahçelievler</h2>
+    <p class="sec__note">On bir mahalle, on bir ayrı hayat. Haritadan birini seçin.</p>
+  </div>
+  <div class="mahalle__grid">
+    <div class="map">
+      <svg viewBox="0 0 640 450" id="map" role="group" aria-label="Bahçelievler mahalleleri, şematik harita">
+        <defs>
+          <filter id="hand" x="-2%" y="-2%" width="104%" height="104%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+            <feDisplacementMap in="SourceGraphic" scale="7"/>
+          </filter>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1" opacity=".35"/>
+          </pattern>
+        </defs>
+        <g id="map-areas" filter="url(#hand)"></g>
+        <g class="e5">
+          <path d="M8 412 C 160 404, 320 418, 632 406" fill="none" stroke-width="10"/>
+          <path d="M8 412 C 160 404, 320 418, 632 406" fill="none" stroke-width="1.2" stroke-dasharray="10 8" class="e5__mid"/>
+          <text x="590" y="432" text-anchor="end">E-5, Bakırköy yönü</text>
+        </g>
+        <g id="map-labels"></g>
+        <text x="632" y="16" text-anchor="end" class="map__scale">şematik, ölçeksiz</text>
+      </svg>
+      <div class="chips" id="chips" role="group" aria-label="Mahalle seçin"></div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite">
+      <p class="panel__empty">Haritadan bir mahalle seçin; orada kimlerin rahat ettiğini, ulaşımın nasıl olduğunu anlatayım.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- SÜREÇ -->
+<section id="surec" class="sec surec">
+  <h2>Nasıl çalışıyorum</h2>
+  <ol class="steps">
+    <li>
+      <h3>Önce dinliyorum</h3>
+      <p>Bütçe, oda sayısı, okula ya da işe uzaklık, kat tercihi. Ne aradığınızı ya da neyi satmak istediğinizi baştan, açık açık konuşuyoruz.</p>
+    </li>
+    <li>
+      <h3>Elemeyi ben yapıyorum</h3>
+      <p>Size uymayacak evleri ben geziyorum. Siz yalnızca görmeye değer olanları görüyorsunuz, cumartesiniz boşa gitmiyor.</p>
+    </li>
+    <li>
+      <h3>Birlikte geziyor, birlikte pazarlık ediyoruz</h3>
+      <p>Evde neye bakmanız gerektiğini yerinde gösteriyorum: rutubet, cephe, bina yönetimi. Fiyat konuşulacaksa masada ben oturuyorum.</p>
+    </li>
+    <li>
+      <h3>Anahtar elinize geçene kadar</h3>
+      <p>Ekspertiz, kredi başvurusu, tapu randevusu, kira sözleşmesi. Evrak işini ben takip ediyorum.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- HESAP -->
+<section id="hesap" class="sec hesap">
+  <h2>Biraz hesap</h2>
+  <div class="hesap__grid">
+    <form class="calc" id="kredi" onsubmit="return false">
+      <h3>Konut kredisi taksiti</h3>
+      <label>Kredi tutarı (₺)
+        <input type="text" inputmode="numeric" id="k-tutar" value="5.000.000" autocomplete="off">
+      </label>
+      <label>Vade (ay)
+        <select id="k-vade">
+          <option>12</option><option>24</option><option>36</option><option>60</option><option selected>120</option><option>180</option>
+        </select>
+      </label>
+      <label>Aylık faiz (%)
+        <input type="text" inputmode="decimal" id="k-faiz" value="2,50" autocomplete="off">
+      </label>
+      <div class="calc__out">
+        <div><span>Aylık taksit</span><strong id="k-taksit">—</strong></div>
+        <div><span>Toplam geri ödeme</span><strong id="k-toplam">—</strong></div>
+      </div>
+      <p class="small">Yaklaşık bir hesaptır. Bankanızın güncel faizini girin; dosya masrafı ve sigortalar buna dahil değil.</p>
+    </form>
+
+    <form class="calc calc--val" name="degerleme" method="POST" action="/tesekkurler.html" data-netlify="true" netlify-honeypot="bot">
+      <input type="hidden" name="form-name" value="degerleme">
+      <p class="hp"><label>Boş bırakın <input name="bot"></label></p>
+      <h3>Eviniz ne eder?</h3>
+      <p class="small">Otomatik fiyat vermiyorum, çünkü aynı sokakta iki ev bile aynı etmiyor. Bilgileri bırakın, bakıp sizi arayayım.</p>
+      <div class="row2">
+        <label>Mahalle
+          <select name="mahalle" id="v-mahalle" required><option value="">Seçin</option></select>
+        </label>
+        <label>Oda sayısı
+          <select name="oda" required><option value="">Seçin</option><option>1+1</option><option>2+1</option><option>3+1</option><option>4+1</option><option>Diğer</option></select>
+        </label>
+      </div>
+      <div class="row2">
+        <label>Brüt m²<input type="number" name="m2" min="20" max="1000" required></label>
+        <label>Bina yaşı<input type="number" name="bina_yasi" min="0" max="80"></label>
+      </div>
+      <div class="row2">
+        <label>Adınız<input type="text" name="ad" autocomplete="name" required></label>
+        <label>Telefon<input type="tel" name="telefon" autocomplete="tel" required></label>
+      </div>
+      <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="kvkk.html" target="_blank">Aydınlatma metnini</a> okudum, bilgilerimin bu talep için kullanılmasını kabul ediyorum.</span></label>
+      <button class="btn btn--solid" type="submit">Değerleme iste</button>
+    </form>
+  </div>
+</section>
+
+<!-- YORUMLAR (data/yorumlar.json doluysa görünür) -->
+<section id="yorumlar" class="sec yorumlar" hidden>
+  <h2>Birlikte ev bulduklarımız</h2>
+  <div class="quotes" id="quotes"></div>
+</section>
+
+<!-- İLETİŞİM -->
+<section id="iletisim" class="sec iletisim">
+  <div class="iletisim__left">
+    <h2>Arayın, yazın ya da uğrayın.</h2>
+    <a class="bigtel" data-tel href="#" data-cfg="telefon"></a>
+    <ul class="links">
+      <li><a data-wa href="#">WhatsApp'tan mesaj gönder</a></li>
+      <li><a data-ig href="#" target="_blank" rel="noopener"></a></li>
+      <li data-need="eposta"><a data-mail href="#" data-cfg="eposta"></a></li>
+      <li data-need="adres"><span data-cfg="adres"></span></li>
+    </ul>
+    <figure class="portre">
+      <img src="img/portre.jpg" alt="Atakan Öztürk" width="160" height="200" loading="lazy" onerror="this.parentNode.classList.add('portre--yok');this.remove()">
+      <figcaption><strong>Atakan Öztürk</strong><br>Bahçelievler'de gayrimenkul danışmanı</figcaption>
+    </figure>
+  </div>
+  <form class="contact" name="iletisim" method="POST" action="/tesekkurler.html" data-netlify="true" netlify-honeypot="bot">
+    <input type="hidden" name="form-name" value="iletisim">
+    <p class="hp"><label>Boş bırakın <input name="bot"></label></p>
+    <fieldset class="seg">
+      <legend>Konu</legend>
+      <label><input type="radio" name="konu" value="Ev arıyorum" checked><span>Ev arıyorum</span></label>
+      <label><input type="radio" name="konu" value="Evimi satmak istiyorum"><span>Satmak istiyorum</span></label>
+      <label><input type="radio" name="konu" value="Evimi kiraya vermek istiyorum"><span>Kiraya vermek istiyorum</span></label>
+    </fieldset>
+    <label>Adınız<input type="text" name="ad" autocomplete="name" required></label>
+    <label>Telefon<input type="tel" name="telefon" autocomplete="tel" required></label>
+    <label>Mesajınız<textarea name="mesaj" rows="4" placeholder="Örneğin: Şirinevler ya da Bahçelievler'de, okula yakın 3+1 arıyoruz."></textarea></label>
+    <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="kvkk.html" target="_blank">Aydınlatma metnini</a> okudum, bilgilerimin bu talep için kullanılmasını kabul ediyorum.</span></label>
+    <button class="btn btn--solid" type="submit">Mesajı gönder</button>
+  </form>
+</section>
+</main>
+
+<footer class="foot"><div class="foot__in">
+  <div class="plate plate--sm"><span class="plate__big">Atakan Öztürk</span></div>
+  <p><span data-cfg="bolge"></span><span data-need="yetkiBelgesi">. Taşınmaz Ticareti Yetki Belgesi No: <span data-cfg="yetkiBelgesi"></span></span></p>
+  <p><a href="kvkk.html">KVKK aydınlatma metni</a> <span class="sep">/</span> <a data-ig href="#" target="_blank" rel="noopener"></a></p>
+  <p class="small">© <span id="yil"></span> Atakan Öztürk</p>
+</div></footer>
+
+<a class="wa-bar" data-wa href="#">WhatsApp'tan yaz</a>
+
+<script src="assets/config.js"></script>
+<script src="assets/plan.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
