@@ -2,11 +2,9 @@
 
 Derleme gerektirmeyen statik site. Klasörü olduğu gibi Netlify'a yüklemen yeterli.
 
-## Yayına alma
-1. app.netlify.com → **Add new site → Deploy manually**
-2. Bu klasörü (zip'i açtıktan sonra) sürükleyip bırak.
-3. **Site configuration → Forms** bölümünden form algılamayı (form detection) aç, sonra siteyi bir kez daha yükle. Formlardan gelen mesajlar burada görünür; e-posta bildirimi de buradan açılır.
-4. **Domain management → Add a domain** ile atakanozturk.net'i bağla.
+## Yayın
+Site GitHub Pages üzerinden yayınlanıyor. `main` dalına yapılan her değişiklik birkaç dakika içinde atakanozturk.net'e yansır.
+Formlar bir sunucuya kayıt yapmaz: ziyaretçi gönder'e basınca WhatsApp, bilgileri yazılmış bir mesajla açılır.
 
 ## Neyi nereden değiştiririm?
 | Ne | Dosya |

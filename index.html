@@ -175,9 +175,7 @@
       <p class="small">Yaklaşık bir hesaptır. Bankanızın güncel faizini girin; dosya masrafı ve sigortalar buna dahil değil.</p>
     </form>
 
-    <form class="calc calc--val" name="degerleme" method="POST" action="/tesekkurler.html" data-netlify="true" netlify-honeypot="bot">
-      <input type="hidden" name="form-name" value="degerleme">
-      <p class="hp"><label>Boş bırakın <input name="bot"></label></p>
+    <form class="calc calc--val" name="degerleme" data-wa-form="Değerleme talebi">
       <h3>Eviniz ne eder?</h3>
       <p class="small">Otomatik fiyat vermiyorum, çünkü aynı sokakta iki ev bile aynı etmiyor. Bilgileri bırakın, bakıp sizi arayayım.</p>
       <div class="row2">
@@ -197,7 +195,8 @@
         <label>Telefon<input type="tel" name="telefon" autocomplete="tel" required></label>
       </div>
       <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="kvkk.html" target="_blank">Aydınlatma metnini</a> okudum, bilgilerimin bu talep için kullanılmasını kabul ediyorum.</span></label>
-      <button class="btn btn--solid" type="submit">Değerleme iste</button>
+      <button class="btn btn--solid" type="submit">WhatsApp'tan değerleme iste</button>
+      <p class="small form-note">Gönderince WhatsApp açılır, bilgileriniz mesaja hazır yazılmış olur.</p>
     </form>
   </div>
 </section>
@@ -224,9 +223,7 @@
       <figcaption><strong>Atakan Öztürk</strong><br>Bahçelievler'de gayrimenkul danışmanı</figcaption>
     </figure>
   </div>
-  <form class="contact" name="iletisim" method="POST" action="/tesekkurler.html" data-netlify="true" netlify-honeypot="bot">
-    <input type="hidden" name="form-name" value="iletisim">
-    <p class="hp"><label>Boş bırakın <input name="bot"></label></p>
+  <form class="contact" name="iletisim" data-wa-form="İletişim">
     <fieldset class="seg">
       <legend>Konu</legend>
       <label><input type="radio" name="konu" value="Ev arıyorum" checked><span>Ev arıyorum</span></label>
@@ -237,7 +234,8 @@
     <label>Telefon<input type="tel" name="telefon" autocomplete="tel" required></label>
     <label>Mesajınız<textarea name="mesaj" rows="4" placeholder="Örneğin: Şirinevler ya da Bahçelievler'de, okula yakın 3+1 arıyoruz."></textarea></label>
     <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="kvkk.html" target="_blank">Aydınlatma metnini</a> okudum, bilgilerimin bu talep için kullanılmasını kabul ediyorum.</span></label>
-    <button class="btn btn--solid" type="submit">Mesajı gönder</button>
+    <button class="btn btn--solid" type="submit">WhatsApp'tan gönder</button>
+    <p class="small form-note">Gönderince WhatsApp açılır, mesajınız hazır yazılmış olur.</p>
   </form>
 </section>
 </main>

@@ -187,6 +187,26 @@
     calc();
   }
 
+  /* ---------- formlar: WhatsApp mesajı olarak gönder ---------- */
+  $$("form[data-wa-form]").forEach((f) => {
+    f.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!f.reportValidity()) return;
+      const etiket = {
+        mahalle: "Mahalle", oda: "Oda sayısı", m2: "Brüt m²", bina_yasi: "Bina yaşı",
+        konu: "Konu", ad: "Ad", telefon: "Telefon", mesaj: "Mesaj"
+      };
+      const satirlar = [`Merhaba Atakan Bey, sitenizden yazıyorum (${f.dataset.waForm}).`];
+      new FormData(f).forEach((v, k) => {
+        if (k === "kvkk" || !String(v).trim()) return;
+        satirlar.push(`${etiket[k] || k}: ${String(v).trim()}`);
+      });
+      window.open(waLink(satirlar.join("\n")), "_blank", "noopener");
+      const not = $(".form-note", f);
+      if (not) not.textContent = "WhatsApp açıldı. Açılmadıysa 0535 278 41 77'yi arayabilirsiniz.";
+    });
+  });
+
   /* ---------- yorumlar ---------- */
   const qs = $("#quotes");
   if (qs) {
