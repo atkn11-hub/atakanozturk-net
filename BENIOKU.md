@@ -20,7 +20,6 @@ Formlar bir sunucuya kayıt yapmaz: ziyaretçi gönder'e basınca WhatsApp, bilg
 ```json
 {
   "no": "041",
-  "ornek": false,
   "durum": "satilik",
   "baslik": "Kısa ve somut bir başlık",
   "mahalle": "Şirinevler",
@@ -40,7 +39,7 @@ Formlar bir sunucuya kayıt yapmaz: ziyaretçi gönder'e basınca WhatsApp, bilg
 - `durum`: `satilik` ya da `kiralik` (kiralıkta fiyat aylık yazılır)
 - Fotoğraf yoksa `[]` bırak; sitede kat planı çizimi görünür.
 - Fotoğrafları `img/` klasörüne koy, en fazla ~1600 px genişlikte ve JPG/WebP olsun.
-- Gerçek ilanları girince örnek ilanları sil (`"ornek": true` olanlar).
+- `listings.json` boşken (`[]`) portföy bölümünde "ilanlar yakında" mesajı ve WhatsApp butonu görünür.
 - Yeni ilan ekleyince `sitemap.xml`'e de `https://atakanozturk.net/ilan.html?no=041` satırını ekle.
 
 ## Kontrol etmen gerekenler

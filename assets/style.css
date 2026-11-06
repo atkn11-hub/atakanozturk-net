@@ -378,3 +378,9 @@ dialog.lightbox::backdrop { background: rgba(10,11,14,.92); }
   .ilan-page { padding-bottom: 110px; }
 }
 .form-note { margin: .8rem 0 0; }
+
+/* portföy boşken */
+.bos { background: var(--kagit); border: 1.5px dashed var(--cizgi); border-radius: 3px; padding: clamp(24px, 4vw, 44px); max-width: 760px; }
+.bos p { max-width: 54ch; color: #33363d; }
+.bos .bos__baslik { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 700; line-height: 1.2; color: var(--murekkep); font-variation-settings: "wdth" 85; }
+.bos .btn { margin-top: .4rem; }

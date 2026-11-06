@@ -84,6 +84,18 @@
   const rail = $("#rail");
   if (rail) {
     getJSON("data/listings.json").then((list) => {
+      if (!list.length) {
+        const sec = $("#portfoy");
+        $$(".filter, .rail-nav, .aside", sec).forEach((el) => el.remove());
+        rail.removeAttribute("tabindex");
+        rail.removeAttribute("aria-label");
+        rail.className = "bos";
+        rail.innerHTML = `
+          <p class="bos__baslik">Portföyü yeniliyorum, ilanlar kısa süre içinde burada olacak.</p>
+          <p>Bu arada ne aradığınızı yazın: mahalle, oda sayısı, bütçe. Uygun bir ev elime geçtiğinde, ilana çıkmadan önce size haber vereyim.</p>
+          <a class="btn btn--wa" target="_blank" rel="noopener" href="${waLink("Merhaba Atakan Bey, şöyle bir ev arıyorum: ")}">Ne aradığınızı yazın</a>`;
+        return;
+      }
       rail.innerHTML = list.map((l) => `
         <a class="card" href="ilan.html?no=${encodeURIComponent(l.no)}" data-durum="${esc(l.durum)}">
           <div class="card__vis">
@@ -96,7 +108,6 @@
             <h3 class="card__title">${esc(l.baslik)}</h3>
             <p class="card__spec"><span>${esc(l.oda)}</span><span>${esc(l.m2)} m²</span><span>${esc(l.kat)}</span></p>
             <p class="card__price">${fiyatYaz(l)}</p>
-            ${l.ornek ? '<span class="ornek">Örnek ilan</span>' : ""}
           </div>
         </a>`).join("");
     }).catch(() => { rail.innerHTML = '<p class="small">İlanlar yüklenemedi. Sayfayı yenileyin ya da WhatsApp\'tan yazın.</p>'; });
@@ -245,7 +256,6 @@
             <span class="doorno doorno--lg"><small>No</small>${esc(l.no)}</span>
             <p class="card__mah">${esc(l.mahalle)}, Bahçelievler</p>
             <h1 class="ilan__title">${esc(l.baslik)}</h1>
-            ${l.ornek ? '<p class="ornek">Örnek ilan</p>' : ""}
             <dl class="facts">${rows.map((r) => `<div><dt>${r[0]}</dt><dd>${esc(r[1])}</dd></div>`).join("")}</dl>
             <a class="btn btn--wa btn--block" target="_blank" rel="noopener" href="${waLink(msg)}">Bu ev için WhatsApp'tan yaz</a>
             <a class="btn btn--line btn--block" href="tel:+${S.whatsapp}">Ara: ${esc(S.telefon)}</a>
