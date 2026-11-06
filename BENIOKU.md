@@ -39,7 +39,7 @@ Formlar bir sunucuya kayıt yapmaz: ziyaretçi gönder'e basınca WhatsApp, bilg
 - `durum`: `satilik` ya da `kiralik` (kiralıkta fiyat aylık yazılır)
 - Fotoğraf yoksa `[]` bırak; sitede kat planı çizimi görünür.
 - Fotoğrafları `img/` klasörüne koy, en fazla ~1600 px genişlikte ve JPG/WebP olsun.
-- `listings.json` boşken (`[]`) portföy bölümünde "ilanlar yakında" mesajı ve WhatsApp butonu görünür.
+- `listings.json` boşken (`[]`) portföy bölümü, menüdeki "Portföy" linki ve "Evlere bak" butonu sitede hiç görünmez. İlk ilanı eklediğinde hepsi kendiliğinden geri gelir.
 - Yeni ilan ekleyince `sitemap.xml`'e de `https://atakanozturk.net/ilan.html?no=041` satırını ekle.
 
 ## Kontrol etmen gerekenler

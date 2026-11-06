@@ -84,18 +84,9 @@
   const rail = $("#rail");
   if (rail) {
     getJSON("data/listings.json").then((list) => {
-      if (!list.length) {
-        const sec = $("#portfoy");
-        $$(".filter, .rail-nav, .aside", sec).forEach((el) => el.remove());
-        rail.removeAttribute("tabindex");
-        rail.removeAttribute("aria-label");
-        rail.className = "bos";
-        rail.innerHTML = `
-          <p class="bos__baslik">Portföyü yeniliyorum, ilanlar kısa süre içinde burada olacak.</p>
-          <p>Bu arada ne aradığınızı yazın: mahalle, oda sayısı, bütçe. Uygun bir ev elime geçtiğinde, ilana çıkmadan önce size haber vereyim.</p>
-          <a class="btn btn--wa" target="_blank" rel="noopener" href="${waLink("Merhaba Atakan Bey, şöyle bir ev arıyorum: ")}">Ne aradığınızı yazın</a>`;
-        return;
-      }
+      if (!list.length) return;
+      $$("[data-portfoy]").forEach((el) => { el.hidden = false; });
+      $$("[data-portfoy-yok]").forEach((el) => el.remove());
       rail.innerHTML = list.map((l) => `
         <a class="card" href="ilan.html?no=${encodeURIComponent(l.no)}" data-durum="${esc(l.durum)}">
           <div class="card__vis">
@@ -121,6 +112,12 @@
     $$(".rail-btn").forEach((b) => b.addEventListener("click", () => {
       rail.scrollBy({ left: Number(b.dataset.dir) * rail.clientWidth * 0.8, behavior: reduce ? "auto" : "smooth" });
     }));
+  }
+
+  if (!rail && $("[data-portfoy]")) {
+    getJSON("data/listings.json").then((list) => {
+      if (list.length) $$("[data-portfoy]").forEach((el) => { el.hidden = false; });
+    }).catch(() => {});
   }
 
   /* ---------- mahalle haritası ---------- */
@@ -235,7 +232,7 @@
     getJSON("data/listings.json").then((list) => {
       const l = list.find((x) => x.no === no);
       if (!l) {
-        det.innerHTML = `<div class="notfound"><h1>Bu ilan artık yayında değil.</h1><p>Satılmış ya da kiralanmış olabilir. <a href="./#portfoy">Güncel ilanlara dönün</a> ya da benzerini sorun.</p></div>`;
+        det.innerHTML = `<div class="notfound"><h1>Bu ilan artık yayında değil.</h1><p>Satılmış ya da kiralanmış olabilir. Benzer bir ev arıyorsanız <a target="_blank" rel="noopener" href="${waLink("Merhaba Atakan Bey, şöyle bir ev arıyorum: ")}">WhatsApp'tan yazın</a> ya da <a href="./">ana sayfaya dönün</a>.</p></div>`;
         return;
       }
       const title = `${l.mahalle} ${durumYaz(l).toLowerCase()} ${l.oda}, ${l.m2} m² | Atakan Öztürk`;

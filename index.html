@@ -34,7 +34,7 @@
 </script>
 </head>
 <body>
-<a class="skip" href="#portfoy">İçeriğe geç</a>
+<a class="skip" href="#icerik">İçeriğe geç</a>
 
 <header class="top">
   <a href="./" class="plate plate--logo" aria-label="Atakan Öztürk, ana sayfa">
@@ -42,7 +42,7 @@
     <span class="plate__big">Atakan Öztürk</span>
   </a>
   <nav class="nav" aria-label="Ana menü">
-    <a href="#portfoy">Portföy</a>
+    <a href="#portfoy" data-portfoy hidden>Portföy</a>
     <a href="#mahalleler">Mahalleler</a>
     <a href="#surec">Nasıl çalışıyorum</a>
     <a href="#hesap">Hesapla</a>
@@ -51,7 +51,7 @@
   <a class="btn btn--wa top__wa" data-wa href="#">WhatsApp</a>
 </header>
 
-<main>
+<main id="icerik">
 <!-- HERO -->
 <section class="hero">
   <div class="hero__text">
@@ -59,7 +59,8 @@
     <p class="hero__lead">Satılık ve kiralık konutta, ev arayanlarla ev sahiplerinin arasında duruyorum. Hangi sokak akşam sessizdir, hangi binanın aidatı nereye gider; işin yarısı bunları bilmek.</p>
     <div class="hero__cta">
       <a class="btn btn--wa" data-wa href="#">WhatsApp'tan yaz</a>
-      <a class="btn btn--line" href="#portfoy">Evlere bak</a>
+      <a class="btn btn--line" href="#portfoy" data-portfoy hidden>Evlere bak</a>
+      <a class="btn btn--line" href="#mahalleler" data-portfoy-yok>Mahallelere göz at</a>
     </div>
   </div>
   <figure class="hero__art" aria-hidden="true">
@@ -74,7 +75,7 @@
 </section>
 
 <!-- PORTFÖY -->
-<section id="portfoy" class="sec portfoy">
+<section id="portfoy" class="sec portfoy" data-portfoy hidden>
   <div class="sec__head">
     <h2>Elimdeki evler</h2>
     <div class="filter" role="group" aria-label="İlanları filtrele">
