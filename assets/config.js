@@ -6,7 +6,7 @@ window.SITE = {
   bolge: "İstanbul / Bahçelievler",
   telefon: "0535 278 41 77",
   whatsapp: "905352784177",          // başında 90, boşluksuz
-  instagram: "atakanremax",          // @ olmadan
+  instagram: "atakanozturknet",          // @ olmadan
   eposta: "",                        // örn. "atakan@atakanozturk.net"
   adres: "",                         // örn. "Adnan Kahveci Mah. ... Bahçelievler / İstanbul"
   yetkiBelgesi: "",                  // Taşınmaz Ticareti Yetki Belgesi No
