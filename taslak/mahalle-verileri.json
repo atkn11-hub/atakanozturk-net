@@ -63,5 +63,37 @@
       "C": 39,
       "D": 11
     }
+  },
+  "sirinevler": {
+    "ad": "Şirinevler",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 51979,
+    "nufusYogunlugu_kisiKm2": 47562,
+    "yas_yuzde": {
+      "0-14": 15.7,
+      "15-29": 24.9,
+      "30-44": 23.9,
+      "45-59": 20.6,
+      "60+": 14.9
+    },
+    "medeniHal_yuzde": {
+      "evli": 53,
+      "bekar": 37,
+      "bosanmis": 6,
+      "esiOlmus": 5
+    },
+    "egitim_yuzde": {
+      "universiteVeUstu": 24,
+      "ilkOrtaLise": 66,
+      "diger": 10
+    },
+    "ses_yuzde": {
+      "A+": 7,
+      "A": 17,
+      "B": 26,
+      "C": 40,
+      "D": 10
+    }
   }
 }
