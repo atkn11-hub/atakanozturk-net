@@ -195,13 +195,14 @@ p { margin: 0 0 1em; }
 .mahalle__grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 48px); align-items: start; }
 .map { background: var(--kagit); border: 1px solid var(--cizgi); padding: clamp(8px, 2vw, 20px); border-radius: 3px; color: var(--murekkep); }
 #map { width: 100%; height: auto; }
-.area { fill: var(--kagit); stroke: var(--murekkep); stroke-width: 1.6; stroke-linejoin: round; transition: fill .2s; }
+.area { fill: var(--kagit); stroke: var(--murekkep); stroke-width: 1.4; stroke-linejoin: round; transition: fill .2s; cursor: pointer; }
 .area.is-hover { fill: url(#hatch); }
 .area.is-on { fill: var(--tabela); }
 .lbl { cursor: pointer; outline: none; }
-.lbl text { font: 600 13.5px var(--f); fill: var(--murekkep); font-variation-settings: "wdth" 82; pointer-events: none; }
+.lbl text { font: 600 11.5px var(--f); fill: var(--murekkep); font-variation-settings: "wdth" 78; pointer-events: none; }
+.lbl:focus-visible text { fill: var(--tabela); text-decoration: underline; }
+.komsu text { font: 500 12px var(--f); fill: #9a9890; letter-spacing: .04em; }
 .lbl.is-on text { fill: #fff; }
-.lbl:focus-visible rect { stroke: var(--lamba); stroke-width: 3; }
 .e5 path { stroke: #9a9890; }
 .e5 .e5__mid { stroke: var(--kagit); }
 .e5 text, .map__scale { font: 500 11px var(--f); fill: var(--gri); }
@@ -374,9 +375,27 @@ dialog.lightbox::backdrop { background: rgba(10,11,14,.92); }
   .steps li { grid-template-columns: 52px 1fr; column-gap: 14px; }
   .steps li::before { font-size: 2.6rem; }
   .steps li::after { left: 12px; top: 46px; }
-  .lbl text { font-size: 16px; }
   .ilan-page { padding-bottom: 110px; }
 }
 .form-note { margin: .8rem 0 0; }
 
 [hidden] { display: none !important; }
+
+/* mahalle demografi paneli */
+.dg__sayi { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 1rem; }
+.dg__sayi div { border-top: 2px solid var(--murekkep); padding-top: 6px; }
+.dg__sayi dt { font-size: .78rem; color: var(--gri); }
+.dg__sayi dd { margin: 0; font-size: 1.5rem; font-weight: 800; font-variation-settings: "wdth" 75; line-height: 1.1; }
+.dg__sayi small { font-size: .7rem; font-weight: 500; color: var(--gri); }
+.dg__not { list-style: none; padding: 0; margin: 0 0 1.1rem; font-size: .9rem; }
+.dg__not li { padding: 6px 10px; background: var(--beton); border-left: 3px solid var(--lamba); margin-bottom: 4px; }
+.dg { margin-bottom: 1rem; }
+.dg__t { font-size: .82rem; font-weight: 650; margin: 0 0 .35rem; }
+.dg__bar { display: flex; height: 12px; border-radius: 2px; overflow: hidden; gap: 2px; }
+.dg__bar span { min-width: 2px; }
+.dg__leg { list-style: none; padding: 0; margin: .4rem 0 0; display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: .78rem; color: var(--gri); }
+.dg__leg i { display: inline-block; width: 9px; height: 9px; border-radius: 1px; margin-right: 4px; vertical-align: -1px; box-shadow: inset 0 0 0 1px rgba(23,25,30,.15); }
+.dg__leg b { color: var(--murekkep); font-weight: 650; }
+.dg__kaynak { font-size: .75rem; color: var(--gri); margin: .4rem 0 1.1rem; }
+.e5 text { font-weight: 650; }
+@media (min-width: 981px) { .map { position: sticky; top: 20px; } }

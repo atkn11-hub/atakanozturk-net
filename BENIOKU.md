@@ -11,7 +11,7 @@ Formlar bir sunucuya kayıt yapmaz: ziyaretçi gönder'e basınca WhatsApp, bilg
 |---|---|
 | Telefon, Instagram, e-posta, adres, yetki belgesi no, deneyim | `assets/config.js` (boş bıraktığın alan sitede görünmez) |
 | İlanlar | `data/listings.json` |
-| Mahalle notları ve m² fiyatları | `data/mahalleler.json` (boş alanlar gösterilmez) |
+| Mahalle haritası ve demografik veriler (nüfus, yaş, medeni hal, eğitim, SES) | `data/mahalleler.json` (`kaynak` alanını doldurursan panelin altında görünür) |
 | Müşteri yorumları | `data/yorumlar.json` (boşken bölüm gizli) |
 | Portre fotoğrafı | `img/portre.jpg` olarak koy, kendiliğinden görünür |
 
@@ -44,4 +44,3 @@ Formlar bir sunucuya kayıt yapmaz: ziyaretçi gönder'e basınca WhatsApp, bilg
 
 ## Kontrol etmen gerekenler
 - `kvkk.html` genel bir şablon. Yayına almadan önce bir hukukçuya göz attır.
-- Mahalle notlarını kendi gözlemlerinle doldur; şu an yalnızca birkaç mahallede kısa not var.

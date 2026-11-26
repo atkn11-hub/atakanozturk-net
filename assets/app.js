@@ -121,56 +121,89 @@
   }
 
   /* ---------- mahalle haritası ---------- */
-  const SHAPES = {
-    yenibosna:   [[20, 30], [200, 36], [196, 150], [24, 146]],
-    zafer:       [[200, 36], [322, 30], [326, 152], [196, 150]],
-    kocasinan:   [[322, 30], [472, 38], [468, 148], [326, 152]],
-    soganli:     [[472, 38], [618, 28], [622, 156], [468, 148]],
-    cobancesme:  [[24, 146], [196, 150], [174, 272], [20, 268]],
-    sirinevler:  [[196, 150], [326, 152], [316, 276], [174, 272]],
-    hurriyet:    [[326, 152], [468, 148], [454, 270], [316, 276]],
-    fevzicakmak: [[468, 148], [622, 156], [620, 266], [454, 270]],
-    cumhuriyet:  [[20, 268], [174, 272], [232, 270], [228, 392], [22, 396]],
-    bahcelievler:[[232, 270], [316, 276], [454, 270], [438, 398], [228, 392]],
-    siyavuspasa: [[454, 270], [620, 266], [616, 392], [438, 398]]
-  };
   const map = $("#map");
   if (map) {
-    getJSON("data/mahalleler.json").then((mh) => {
+    getJSON("data/mahalleler.json").then((veri) => {
+      const mh = Array.isArray(veri) ? veri : veri.mahalleler || [];
+      const kaynak = (veri && veri.kaynak) || "";
       const areas = $("#map-areas"), labels = $("#map-labels"), panel = $("#panel");
       const sel = $("#v-mahalle");
+      const fmt = (n) => new Intl.NumberFormat("tr-TR").format(n);
+      const pct = (n) => "%" + String(n).replace(".", ",");
+
       mh.forEach((m) => {
         if (sel) sel.insertAdjacentHTML("beforeend", `<option>${esc(m.ad)}</option>`);
         $("#chips").insertAdjacentHTML("beforeend", `<button type="button" data-id="${m.id}" aria-pressed="false">${esc(m.ad)}</button>`);
-        const pts = SHAPES[m.id]; if (!pts) return;
-        const cx = pts.reduce((a, p) => a + p[0], 0) / pts.length;
-        const cy = pts.reduce((a, p) => a + p[1], 0) / pts.length;
-        areas.insertAdjacentHTML("beforeend", `<polygon points="${pts.map((p) => p.join(",")).join(" ")}" data-id="${m.id}" class="area"/>`);
-        const words = m.ad.split(" ");
-        labels.insertAdjacentHTML("beforeend", `<g class="lbl" data-id="${m.id}" tabindex="0" role="button" aria-label="${esc(m.ad)}">
-          <rect x="${cx - 66}" y="${cy - 36}" width="132" height="72" fill="transparent"/>
-          ${words.map((w, i) => `<text x="${cx}" y="${cy + 5 + (i - (words.length - 1) / 2) * 16}" text-anchor="middle">${esc(w)}</text>`).join("")}</g>`);
+        if (!m.sekil) return;
+        areas.insertAdjacentHTML("beforeend", `<polygon points="${m.sekil.map((p) => p.join(",")).join(" ")}" data-id="${m.id}" class="area"/>`);
+        const e = m.etiket || {};
+        const words = e.aci ? [m.ad] : m.ad.split(" ");
+        const tr = e.aci ? ` transform="rotate(${e.aci} ${e.x} ${e.y})"` : "";
+        labels.insertAdjacentHTML("beforeend", `<g class="lbl" data-id="${m.id}" tabindex="0" role="button" aria-label="${esc(m.ad)} Mahallesi"${tr}>
+          ${words.map((w, i) => `<text x="${e.x}" y="${e.y + 4 + (i - (words.length - 1) / 2) * 13}" text-anchor="middle">${esc(w)}</text>`).join("")}</g>`);
       });
+
+      // İlçe içindeki sıralamadan öne çıkan bilgiler
+      const olcut = [
+        { ad: "üniversite mezunu oranı", f: (m) => m.egitim["Üniversite ve üstü"] },
+        { ad: "A+ ve A grubu oranı", f: (m) => m.ses["A+"] + m.ses["A"] },
+        { ad: "60 yaş üstü oranı", f: (m) => m.yas["60+"] },
+        { ad: "15-29 yaş oranı", f: (m) => m.yas["15-29"] },
+        { ad: "0-14 yaş oranı", f: (m) => m.yas["0-14"] },
+        { ad: "nüfus yoğunluğu", f: (m) => m.yogunluk },
+        { ad: "nüfus", f: (m) => m.nufus }
+      ];
+      function oneCikan(m) {
+        const out = [];
+        olcut.forEach((o) => {
+          const sirali = mh.map(o.f).sort((a, b) => b - a), v = o.f(m);
+          if (v === sirali[0] && sirali[0] !== sirali[1]) out.push(`İlçede ${o.ad} en yüksek mahalle.`);
+          else if (v === sirali[sirali.length - 1] && sirali[sirali.length - 1] !== sirali[sirali.length - 2]) out.push(`İlçede ${o.ad} en düşük mahalle.`);
+        });
+        return out.slice(0, 3);
+      }
+
+      function cubuk(baslik, obj, ton) {
+        const k = Object.keys(obj);
+        return `<div class="dg">
+          <p class="dg__t">${baslik}</p>
+          <div class="dg__bar" role="img" aria-label="${esc(baslik)}: ${k.map((x) => esc(x) + " " + pct(obj[x])).join(", ")}">
+            ${k.map((x, i) => `<span style="flex:${obj[x]} 1 0;background:${ton[i]}"></span>`).join("")}
+          </div>
+          <ul class="dg__leg">${k.map((x, i) => `<li><i style="background:${ton[i]}"></i>${esc(x)} <b>${pct(obj[x])}</b></li>`).join("")}</ul>
+        </div>`;
+      }
+      const T5 = ["#15306F", "#2F55B5", "#7C95D3", "#B9C6E8", "#E3E8F4"];
+      const T4 = ["#15306F", "#5C7CC8", "#F0AE2E", "#C6C5BF"];
+      const T3 = ["#15306F", "#7C95D3", "#C6C5BF"];
 
       function show(id) {
         const m = mh.find((x) => x.id === id); if (!m) return;
         $$(".area", map).forEach((a) => a.classList.toggle("is-on", a.dataset.id === id));
         $$(".lbl", map).forEach((a) => a.classList.toggle("is-on", a.dataset.id === id));
         $$("#chips button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.id === id));
-        const row = (t, v) => v ? `<div><dt>${t}</dt><dd>${esc(v)}</dd></div>` : "";
-        const any = m.kimlere || m.ulasim || m.not || m.m2Fiyat;
+        const notlar = oneCikan(m);
         panel.innerHTML = `
           <div class="plate plate--panel"><span class="plate__small">Bahçelievler</span><span class="plate__big">${esc(m.ad)} Mah.</span></div>
-          ${any ? `<dl class="panel__dl">${row("Kimlere uygun", m.kimlere)}${row("Ulaşım", m.ulasim)}${row("Benim notum", m.not)}${row("Ortalama m² fiyatı", m.m2Fiyat)}</dl>`
-                : `<p>${esc(m.ad)} için notlarımı yakında ekliyorum. O zamana kadar sorunuz varsa doğrudan sorun; bildiğimi anlatırım.</p>`}
+          <dl class="dg__sayi">
+            <div><dt>Nüfus</dt><dd>${fmt(m.nufus)}</dd></div>
+            <div><dt>Yoğunluk</dt><dd>${fmt(m.yogunluk)} <small>kişi/km²</small></dd></div>
+          </dl>
+          ${notlar.length ? `<ul class="dg__not">${notlar.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
+          ${cubuk("Sosyo-ekonomik statü", m.ses, T5)}
+          ${cubuk("Yaş dağılımı", m.yas, T5)}
+          ${cubuk("Eğitim", m.egitim, T3)}
+          ${cubuk("Medeni hal", m.medeniHal, T4)}
+          <p class="dg__kaynak">Yüzdeler yuvarlanmış, yaklaşık değerlerdir.${kaynak ? " Kaynak: " + esc(kaynak) + "." : ""}</p>
           <a class="btn btn--line" target="_blank" rel="noopener" href="${waLink("Merhaba Atakan Bey, " + m.ad + " Mahallesi hakkında bilgi almak istiyorum.")}">${esc(m.ad)} hakkında sor</a>`;
       }
       $("#chips").addEventListener("click", (e) => { const t = e.target.closest("[data-id]"); if (t) { show(t.dataset.id); if (matchMedia("(max-width: 640px)").matches) panel.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); } });
       map.addEventListener("click", (e) => { const t = e.target.closest("[data-id]"); if (t) show(t.dataset.id); });
-      map.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && e.target.dataset.id) { e.preventDefault(); show(e.target.dataset.id); } });
-      $$(".lbl", map).forEach((l) => {
-        l.addEventListener("mouseenter", () => $(`.area[data-id="${l.dataset.id}"]`, map).classList.add("is-hover"));
-        l.addEventListener("mouseleave", () => $(`.area[data-id="${l.dataset.id}"]`, map).classList.remove("is-hover"));
+      map.addEventListener("keydown", (e) => { const t = e.target.closest && e.target.closest("[data-id]"); if ((e.key === "Enter" || e.key === " ") && t) { e.preventDefault(); show(t.dataset.id); } });
+      $$(".area, .lbl", map).forEach((l) => {
+        const a = () => $(`.area[data-id="${l.dataset.id}"]`, map);
+        l.addEventListener("mouseenter", () => a().classList.add("is-hover"));
+        l.addEventListener("mouseleave", () => a().classList.remove("is-hover"));
       });
     });
   }

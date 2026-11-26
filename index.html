@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=8">
+<link rel="stylesheet" href="assets/style.css?v=9">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,29 +102,33 @@
   </div>
   <div class="mahalle__grid">
     <div class="map">
-      <svg viewBox="0 0 640 450" id="map" role="group" aria-label="Bahçelievler mahalleleri, şematik harita">
+      <svg viewBox="0 0 640 440" id="map" role="group" aria-label="Bahçelievler mahalleleri haritası">
         <defs>
           <filter id="hand" x="-2%" y="-2%" width="104%" height="104%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
-            <feDisplacementMap in="SourceGraphic" scale="7"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7"/>
+            <feDisplacementMap in="SourceGraphic" scale="3"/>
           </filter>
           <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1" opacity=".35"/>
           </pattern>
         </defs>
-        <g id="map-areas" filter="url(#hand)"></g>
-        <g class="e5">
-          <path d="M8 412 C 160 404, 320 418, 632 406" fill="none" stroke-width="10"/>
-          <path d="M8 412 C 160 404, 320 418, 632 406" fill="none" stroke-width="1.2" stroke-dasharray="10 8" class="e5__mid"/>
-          <text x="590" y="432" text-anchor="end">E-5, Bakırköy yönü</text>
+        <g class="komsu" aria-hidden="true">
+          <text x="250" y="16">Bağcılar</text>
+          <text x="560" y="80">Güngören</text>
+          <text x="330" y="428">Bakırköy</text>
         </g>
+        <g class="e5" aria-hidden="true">
+          <path id="e5yol" d="M53 318 L93 362 L122 380 L160 383 L316 393 L380 391 L508 343 L638 286" fill="none" stroke-width="7"/>
+          <path d="M53 318 L93 362 L122 380 L160 383 L316 393 L380 391 L508 343 L638 286" fill="none" stroke-width="1" stroke-dasharray="8 6" class="e5__mid"/>
+          <text x="470" y="384">E-5</text>
+        </g>
+        <g id="map-areas" filter="url(#hand)"></g>
         <g id="map-labels"></g>
-        <text x="632" y="16" text-anchor="end" class="map__scale">şematik, ölçeksiz</text>
       </svg>
       <div class="chips" id="chips" role="group" aria-label="Mahalle seçin"></div>
     </div>
     <aside class="panel" id="panel" aria-live="polite">
-      <p class="panel__empty">Haritadan bir mahalle seçin; orada kimlerin rahat ettiğini, ulaşımın nasıl olduğunu anlatayım.</p>
+      <p class="panel__empty">Haritadan bir mahalle seçin. Nüfusunu, yaş dağılımını, eğitim ve gelir profilini burada göstereyim.</p>
     </aside>
   </div>
 </section>
@@ -250,8 +254,8 @@
 
 <a class="wa-bar" data-wa href="#">WhatsApp'tan yaz</a>
 
-<script src="assets/config.js?v=8"></script>
-<script src="assets/plan.js?v=8"></script>
-<script src="assets/app.js?v=8"></script>
+<script src="assets/config.js?v=9"></script>
+<script src="assets/plan.js?v=9"></script>
+<script src="assets/app.js?v=9"></script>
 </body>
 </html>
