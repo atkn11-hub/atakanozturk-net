@@ -223,5 +223,37 @@
       "C": 44,
       "D": 11
     }
+  },
+  "fevzicakmak": {
+    "ad": "Fevzi Çakmak",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 22087,
+    "nufusYogunlugu_kisiKm2": 41902,
+    "yas_yuzde": {
+      "0-14": 16.2,
+      "15-29": 25.0,
+      "30-44": 24.4,
+      "45-59": 21.4,
+      "60+": 12.9
+    },
+    "medeniHal_yuzde": {
+      "evli": 55,
+      "bekar": 35,
+      "bosanmis": 5,
+      "esiOlmus": 4
+    },
+    "egitim_yuzde": {
+      "universiteVeUstu": 19,
+      "ilkOrtaLise": 71,
+      "diger": 9
+    },
+    "ses_yuzde": {
+      "A+": 5,
+      "A": 14,
+      "B": 25,
+      "C": 46,
+      "D": 10
+    }
   }
 }
