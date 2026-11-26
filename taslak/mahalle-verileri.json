@@ -191,5 +191,37 @@
       "C": 45,
       "D": 11
     }
+  },
+  "hurriyet": {
+    "ad": "Hürriyet",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 42183,
+    "nufusYogunlugu_kisiKm2": 74272,
+    "yas_yuzde": {
+      "0-14": 17.5,
+      "15-29": 25.9,
+      "30-44": 24.9,
+      "45-59": 19.3,
+      "60+": 12.4
+    },
+    "medeniHal_yuzde": {
+      "evli": 54,
+      "bekar": 37,
+      "bosanmis": 5,
+      "esiOlmus": 4
+    },
+    "egitim_yuzde": {
+      "universiteVeUstu": 21,
+      "ilkOrtaLise": 69,
+      "diger": 11
+    },
+    "ses_yuzde": {
+      "A+": 5,
+      "A": 14,
+      "B": 25,
+      "C": 44,
+      "D": 11
+    }
   }
 }
