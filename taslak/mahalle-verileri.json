@@ -1,0 +1,14 @@
+{
+  "_not": "TASLAK. Yayında değil. 'Siteye aktar' denince data/mahalleler.json ve siteye işlenecek.",
+  "zafer": {
+    "ad": "Zafer",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 76701,
+    "nufusYogunlugu_kisiKm2": 70203,
+    "yas_yuzde": { "0-14": 19.7, "15-29": 25.3, "30-44": 24.6, "45-59": 19.7, "60+": 10.7 },
+    "medeniHal_yuzde": { "evli": 56, "bekar": 35, "bosanmis": 5, "esiOlmus": 4 },
+    "egitim_yuzde": { "universiteVeUstu": 16, "ilkOrtaLise": 72, "diger": 12 },
+    "ses_yuzde": { "A+": 4, "A": 11, "B": 23, "C": 49, "D": 12 }
+  }
+}
