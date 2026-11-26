@@ -126,6 +126,7 @@
     getJSON("data/mahalleler.json").then((veri) => {
       const mh = Array.isArray(veri) ? veri : veri.mahalleler || [];
       const kaynak = (veri && veri.kaynak) || "";
+      const kaynakUrl = (veri && veri.kaynakUrl) || "";
       const areas = $("#map-areas"), labels = $("#map-labels"), panel = $("#panel");
       const sel = $("#v-mahalle");
       const fmt = (n) => new Intl.NumberFormat("tr-TR").format(n);
@@ -194,8 +195,7 @@
           ${cubuk("Yaş dağılımı", m.yas, T5)}
           ${cubuk("Eğitim", m.egitim, T3)}
           ${cubuk("Medeni hal", m.medeniHal, T4)}
-          <p class="dg__kaynak">Yüzdeler yuvarlanmış, yaklaşık değerlerdir.${kaynak ? " Kaynak: " + esc(kaynak) + "." : ""}</p>
-          <a class="btn btn--line" target="_blank" rel="noopener" href="${waLink("Merhaba Atakan Bey, " + m.ad + " Mahallesi hakkında bilgi almak istiyorum.")}">${esc(m.ad)} hakkında sor</a>`;
+          <p class="dg__kaynak">Yüzdeler yuvarlanmış, yaklaşık değerlerdir.${kaynak ? " Kaynak: " + (kaynakUrl ? `<a href="${esc(kaynakUrl)}" target="_blank" rel="noopener">${esc(kaynak)}</a>` : esc(kaynak)) + "." : ""}</p>`;
       }
       $("#chips").addEventListener("click", (e) => { const t = e.target.closest("[data-id]"); if (t) { show(t.dataset.id); if (matchMedia("(max-width: 640px)").matches) panel.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); } });
       map.addEventListener("click", (e) => { const t = e.target.closest("[data-id]"); if (t) show(t.dataset.id); });

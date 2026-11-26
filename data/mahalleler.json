@@ -1,6 +1,7 @@
 {
   "_aciklama": "Mahalle haritası ve demografik veriler. 'kaynak' doldurulursa panelin altında gösterilir. Yüzdeler yuvarlanmış değerlerdir.",
-  "kaynak": "",
+  "kaynak": "Endeksa",
+  "kaynakUrl": "https://www.endeksa.com",
   "mahalleler": [
     {
       "id": "yenibosna",
