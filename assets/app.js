@@ -11,7 +11,7 @@
   /* ---------- iletişim bilgileri ---------- */
   $$("[data-need]").forEach((el) => { if (!S[el.dataset.need]) el.remove(); });
   $$("[data-cfg]").forEach((el) => { el.textContent = S[el.dataset.cfg] || ""; });
-  $$("[data-wa]").forEach((el) => { el.href = waLink(el.dataset.waMsg || "Merhaba Atakan Bey, "); el.target = "_blank"; el.rel = "noopener"; });
+  $$("[data-wa]").forEach((el) => { el.href = waLink(el.dataset.waMsg || "Merhaba, "); el.target = "_blank"; el.rel = "noopener"; });
   $$("[data-tel]").forEach((el) => { el.href = "tel:+" + S.whatsapp; });
   $$("[data-ig]").forEach((el) => { el.href = "https://www.instagram.com/" + S.instagram + "/"; if (!el.textContent) el.textContent = "Instagram: @" + S.instagram; });
   $$("[data-mail]").forEach((el) => { el.href = "mailto:" + S.eposta; });
@@ -237,7 +237,7 @@
         mahalle: "Mahalle", oda: "Oda sayısı", m2: "Brüt m²", bina_yasi: "Bina yaşı",
         konu: "Konu", ad: "Ad", telefon: "Telefon", mesaj: "Mesaj"
       };
-      const satirlar = [`Merhaba Atakan Bey, sitenizden yazıyorum (${f.dataset.waForm}).`];
+      const satirlar = [`Merhaba, sitenizden yazıyorum (${f.dataset.waForm}).`];
       new FormData(f).forEach((v, k) => {
         if (k === "kvkk" || !String(v).trim()) return;
         satirlar.push(`${etiket[k] || k}: ${String(v).trim()}`);
@@ -265,13 +265,13 @@
     getJSON("data/listings.json").then((list) => {
       const l = list.find((x) => x.no === no);
       if (!l) {
-        det.innerHTML = `<div class="notfound"><h1>Bu ilan artık yayında değil.</h1><p>Satılmış ya da kiralanmış olabilir. Benzer bir ev arıyorsanız <a target="_blank" rel="noopener" href="${waLink("Merhaba Atakan Bey, şöyle bir ev arıyorum: ")}">WhatsApp'tan yazın</a> ya da <a href="./">ana sayfaya dönün</a>.</p></div>`;
+        det.innerHTML = `<div class="notfound"><h1>Bu ilan artık yayında değil.</h1><p>Satılmış ya da kiralanmış olabilir. Benzer bir ev arıyorsanız <a target="_blank" rel="noopener" href="${waLink("Merhaba, şöyle bir ev arıyorum: ")}">WhatsApp'tan yazın</a> ya da <a href="./">ana sayfaya dönün</a>.</p></div>`;
         return;
       }
       const title = `${l.mahalle} ${durumYaz(l).toLowerCase()} ${l.oda}, ${l.m2} m² | Atakan Öztürk`;
       document.title = title;
       const md = $('meta[name="description"]'); if (md) md.content = `${l.baslik}. ${l.mahalle}, Bahçelievler. ${fiyatYaz(l)}.`;
-      const msg = `Merhaba Atakan Bey, ${l.no} numaralı ilan (${l.mahalle}, ${l.oda}, ${l.m2} m²) hakkında bilgi almak istiyorum.`;
+      const msg = `Merhaba, ${l.no} numaralı ilan (${l.mahalle}, ${l.oda}, ${l.m2} m²) hakkında bilgi almak istiyorum.`;
       const fotos = l.fotograflar || [];
       const rows = [
         ["Fiyat", fiyatYaz(l)], ["Oda", l.oda], ["Brüt alan", l.m2 + " m²"], ["Kat", l.kat],
