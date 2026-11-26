@@ -159,5 +159,37 @@
       "C": 37,
       "D": 9
     }
+  },
+  "kocasinan": {
+    "ad": "Kocasinan Merkez",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 69725,
+    "nufusYogunlugu_kisiKm2": 35131,
+    "yas_yuzde": {
+      "0-14": 20.5,
+      "15-29": 23.4,
+      "30-44": 24.9,
+      "45-59": 20.2,
+      "60+": 11.0
+    },
+    "medeniHal_yuzde": {
+      "evli": 59,
+      "bekar": 32,
+      "bosanmis": 4,
+      "esiOlmus": 4
+    },
+    "egitim_yuzde": {
+      "universiteVeUstu": 20,
+      "ilkOrtaLise": 71,
+      "diger": 11
+    },
+    "ses_yuzde": {
+      "A+": 5,
+      "A": 14,
+      "B": 25,
+      "C": 45,
+      "D": 11
+    }
   }
 }
