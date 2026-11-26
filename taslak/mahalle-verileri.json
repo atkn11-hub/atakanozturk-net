@@ -95,5 +95,37 @@
       "C": 40,
       "D": 10
     }
+  },
+  "soganli": {
+    "ad": "Soğanlı",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 61359,
+    "nufusYogunlugu_kisiKm2": 64010,
+    "yas_yuzde": {
+      "0-14": 16.4,
+      "15-29": 21.7,
+      "30-44": 23.6,
+      "45-59": 22.8,
+      "60+": 15.6
+    },
+    "medeniHal_yuzde": {
+      "evli": 55,
+      "bekar": 33,
+      "bosanmis": 7,
+      "esiOlmus": 5
+    },
+    "egitim_yuzde": {
+      "universiteVeUstu": 21,
+      "ilkOrtaLise": 70,
+      "diger": 10
+    },
+    "ses_yuzde": {
+      "A+": 6,
+      "A": 15,
+      "B": 26,
+      "C": 43,
+      "D": 10
+    }
   }
 }
