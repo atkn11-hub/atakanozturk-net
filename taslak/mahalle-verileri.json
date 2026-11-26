@@ -127,5 +127,37 @@
       "C": 43,
       "D": 10
     }
+  },
+  "siyavuspasa": {
+    "ad": "Siyavuşpaşa",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 53704,
+    "nufusYogunlugu_kisiKm2": 66253,
+    "yas_yuzde": {
+      "0-14": 14.1,
+      "15-29": 20.8,
+      "30-44": 23.9,
+      "45-59": 22.3,
+      "60+": 18.9
+    },
+    "medeniHal_yuzde": {
+      "evli": 53,
+      "bekar": 33,
+      "bosanmis": 8,
+      "esiOlmus": 6
+    },
+    "egitim_yuzde": {
+      "universiteVeUstu": 27,
+      "ilkOrtaLise": 64,
+      "diger": 8
+    },
+    "ses_yuzde": {
+      "A+": 8,
+      "A": 20,
+      "B": 27,
+      "C": 37,
+      "D": 9
+    }
   }
 }
