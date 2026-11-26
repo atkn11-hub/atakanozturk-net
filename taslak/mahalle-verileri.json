@@ -255,5 +255,37 @@
       "C": 46,
       "D": 10
     }
+  },
+  "cobancesme": {
+    "ad": "Çobançeşme",
+    "kaynak": "Atakan'ın gönderdiği 'Analiz' uygulaması ekran görüntüleri (Demografi sekmesi)",
+    "eklenme": "2026-11-26",
+    "nufus": 30107,
+    "nufusYogunlugu_kisiKm2": 23528,
+    "yas_yuzde": {
+      "0-14": 17.9,
+      "15-29": 25.1,
+      "30-44": 24.7,
+      "45-59": 20.7,
+      "60+": 11.6
+    },
+    "medeniHal_yuzde": {
+      "evli": 58,
+      "bekar": 34,
+      "bosanmis": 5,
+      "esiOlmus": 4
+    },
+    "egitim_yuzde": {
+      "universiteVeUstu": 19,
+      "ilkOrtaLise": 72,
+      "diger": 10
+    },
+    "ses_yuzde": {
+      "A+": 5,
+      "A": 13,
+      "B": 27,
+      "C": 46,
+      "D": 10
+    }
   }
 }
